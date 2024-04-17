@@ -17,7 +17,7 @@ function App() {
   const [isStartHereHovered, setIsStartHereHovered] = useState(false);
   const [isConnected, setIsConnected] = useState(false);
 
-  const CONTRACT_ADDRESS = '0xA6484A3F99215703b3DFe1d006cf2374f8675A2D';
+  const CONTRACT_ADDRESS = '0x37A4559DEBDf5f8fA3206eD9362eC828bf8b5744';
   const MAGMA_NETWORK_ID = 6969696969;
 
   async function requestAccount() {
