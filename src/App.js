@@ -53,6 +53,10 @@ function App() {
     checkNetwork();
   }, []);
 
+  useEffect(() => {
+    document.title = "Lava Faucet";
+  }, []);
+
   const handleConnect = async () => {
     try {
       if (window.ethereum && window.ethereum.selectedAddress) {
@@ -173,7 +177,7 @@ function App() {
                 handleTransaction={handleTransaction}
                 setShowMatrixRain={setShowMatrixRain}
               />
-              <div className="info-container tip-info" style={{ fontFamily: "'Roboto Mono', monospace", fontWeight: "bold" }}>
+              <div className="info-container tip-info" style={{ fontFamily: "'Roboto', monospace", fontWeight: "strong" }}>
                 <p>Tip Mainnet ETH/Magma to support (higher potential airdrop rewards...).</p>
               </div>
             </div>
