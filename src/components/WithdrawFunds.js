@@ -61,7 +61,7 @@ const WithdrawFunds = ({ contract, account, isLoading, setShowMatrixRain }) => {
         return () => clearInterval(interval);
       }
     } catch (error) {
-      console.error('Error fetching last withdrawal time:', error);
+      console.error('Error fetching last withdraw time:', error);
     }
   }, [contract, account, cooldownTime]); // Add dependencies to useCallback
 
@@ -97,16 +97,16 @@ const WithdrawFunds = ({ contract, account, isLoading, setShowMatrixRain }) => {
       const transaction = await contract.withdraw({ from: account });
       if (transaction && transaction.hash) {
         // Withdrawal successful
-        setMessage('Withdrawal successful!');
+        setMessage('Withdraw successful!');
         setTimeout(() => setMessage(''), 10000);
         setShowMatrixRain(true); // Show animation or any other action upon successful withdrawal
         setTimeout(() => setShowMatrixRain(false), 8000); // Hide animation after 8 seconds
       } else {
-        setMessage('Withdrawal failed: Transaction not found.');
+        setMessage('Withdraw failed: Transaction not found.');
         setTimeout(() => setMessage(''), 10000);
       }
     } catch (error) {
-      console.error("Withdrawal failed", error);
+      console.error("Withdraw failed", error);
       setMessage('Withdrawal failed. Faucet is out of LAVA, you are on the wrong network, or you are not on the whitelist');
       setTimeout(() => setMessage(''), 10000);
     } finally {
@@ -128,7 +128,7 @@ const WithdrawFunds = ({ contract, account, isLoading, setShowMatrixRain }) => {
         disabled={loading || !canWithdraw || !captchaToken || withdrawDisabled}
         className={loading || !canWithdraw || !captchaToken || withdrawDisabled ? 'button-disabled' : ''}
       >
-        {loading ? <LoadingSpinner /> : canWithdraw ? 'Claim .1 LAVA' : `Next withdrawal in ${formatTimeLeft(timeLeft)}`}
+        {loading ? <LoadingSpinner /> : canWithdraw ? 'Claim .1 LAVA' : `Next withdraw in ${formatTimeLeft(timeLeft)}`}
       </button>
       {message && <p className="message">{message}</p>}
     </>
