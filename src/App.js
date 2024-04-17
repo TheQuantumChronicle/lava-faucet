@@ -15,6 +15,7 @@ function App() {
   const [showMatrixRain, setShowMatrixRain] = useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [isStartHereHovered, setIsStartHereHovered] = useState(false);
+  const [isConnected, setIsConnected] = useState(false);
 
   const CONTRACT_ADDRESS = '0xA6484A3F99215703b3DFe1d006cf2374f8675A2D';
   const MAGMA_NETWORK_ID = 6969696969;
@@ -40,6 +41,7 @@ function App() {
           setContract(contractInstance);
           const userAddress = await signer.getAddress();
           setAccount(userAddress);
+          setIsConnected(true);
         } catch (error) {
           console.error('Error connecting to MetaMask:', error);
         }
@@ -53,9 +55,14 @@ function App() {
 
   const handleConnect = async () => {
     try {
-      await requestAccount();
-      // If account successfully connected, reload the page
-      window.location.reload();
+      if (window.ethereum && window.ethereum.selectedAddress) {
+        const selectedAddress = window.ethereum.selectedAddress;
+        setAccount(selectedAddress);
+        // Reload the page only if the connection is successful
+        window.location.reload();
+      } else {
+        await requestAccount();
+      }
     } catch (error) {
       console.error('Error connecting to MetaMask:', error);
       alert('Error connecting to MetaMask. Please try again.');
@@ -130,10 +137,12 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="connect-wallet-container">
-          <button onClick={handleConnect} className="connect-wallet-button" style={{ fontFamily: "'Roboto', monospace" }}>Connect Wallet</button>
-        </div>
-        {account && (
+        {!isConnected && (
+          <div className="connect-wallet-container">
+            <button onClick={handleConnect} className="connect-wallet-button" style={{ fontFamily: "'Roboto', monospace", fontWeight: "bold" }}>Connect Wallet</button>
+          </div>
+        )}
+        {isConnected && (
           <>
             {contract && (
               <FaucetBalance contract={contract} />
