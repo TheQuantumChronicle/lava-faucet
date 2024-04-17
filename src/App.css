@@ -1,0 +1,399 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap');
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #0a0a0a;
+  color: #fff;
+  user-select: none;
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  font-family: 'Press Start 2P';
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+  padding: 5px;
+  height: 100%;
+  z-index: 1; 
+}
+
+.title {
+  font-family: 'Press Start 2P';
+  color: #ff652f;
+  font-size: 48px;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.23);
+  border-bottom: 2px #ff0000;
+  padding-bottom: 10px;
+}
+
+.App-header {
+  padding: 2rem;
+  position: fixed;
+  max-width: 50%;
+  border: 2px solid #ff652f;
+  box-shadow: 0 0 50px #ff652f;
+  border-radius: 10px;
+  margin-bottom: 0;
+  margin-top: 20px;
+  background-color: rgba(10, 10, 10, 0.9);
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+/* Styles for smaller screens */
+@media (max-width: 768px) {
+  .App-header {
+    max-width: 70%;
+    padding: 1rem; /* Decrease padding for smaller screens */
+    font-size: 0.8rem; /* Decrease font size */
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  .captcha-container {
+    display: relative;
+    justify-content: center;
+    align-items: center;
+    max-width: 80%; /* Ensure the captcha container doesn't overflow its parent */
+    overflow: hidden; /* Hide any content that overflows the container */
+  }
+
+}
+
+/* Styles for even smaller screens */
+@media (max-width: 480px) {
+  .App-header {
+    position: absolute;
+    max-width: 70%;
+    max-height: 100%;
+    padding: 0.2rem; /* Further decrease padding */
+    font-size: 0.6rem; /* Further decrease font size */
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+.App-title {
+  color: #ff652f;
+}
+
+.Faucet-container {
+  /* Container styles, such as padding and alignment */
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px #ff652f; /* Neon glow effect */
+}
+
+.start-here-container {
+  position: relative;
+  display: inline-block;
+}
+
+.start-here-text {
+  color: #fff; /* White text color */
+  transition: transform 0.3s ease-in-out;
+  animation: magmaPulse 2s infinite alternate; /* Lava-themed animation */
+}
+
+.start-here-container:hover .start-here-text {
+  transform: scale(1.1); /* Increase size slightly on hover */
+}
+
+.start-here-tooltip {
+  visibility: hidden;
+  font-family: 'Roboto', monospace;
+  width: 220px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.start-here-container:hover .start-here-tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.start-here-tooltip p {
+  margin: 8px; /* Add vertical spacing */
+}
+
+.start-here-tooltip::before {
+  content: '';
+  position: absolute;
+  border-width: 6px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes magmaPulse {
+  0% {
+    text-shadow: 0 0 5px #ff652f, 0 0 10px #ff652f, 0 0 15px #ff652f;
+  }
+  50% {
+    text-shadow: 0 0 20px #ff652f, 0 0 30px #ff652f, 0 0 40px #ff652f;
+  }
+  100% {
+    text-shadow: 0 0 5px #ff652f, 0 0 10px #ff652f, 0 0 15px #ff652f;
+  }
+}
+
+/* Add this CSS to your stylesheet or component style */
+.captcha-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%; /* Ensure the captcha container doesn't overflow its parent */
+  overflow: hidden; /* Hide any content that overflows the container */
+}
+
+.faucet-balance {
+  margin: 20px 0;
+  padding: 10px;
+  border: 1px solid #ff652f; /* Use the neon accent color */
+  background: rgba(255, 101, 47, 0.1); /* Slight background for the balance area */
+  border-radius: 10px;
+  box-shadow: 0 0 20px #ff652f; /* Neon glow effect */
+}
+
+.balance-title {
+  margin: 0;
+  color: #ff652f; /* Neon text for titles */
+}
+
+.balance {
+  color: #fff; /* White text for the balance amount */
+  font-size: 1.5em;
+}
+
+/* General button styling */
+button {
+  background-color: #ff652f; /* Bright neon button color */
+  color: #0a0a0a;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ff652f; /* Neon glow effect */
+  margin: 0.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.button-container {
+  position: relative;
+}
+
+.button-container:hover .info-container {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.button-container:hover .info-container.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.button-container.withdraw-button:hover .info-container.withdraw-info {
+  visibility: visible;
+  opacity: 1;
+}
+
+.button-container.contribute-button:hover .info-container.contribution-info {
+  visibility: visible;
+  opacity: 1;
+}
+
+.button-container.tip-button:hover .info-container.tip-info {
+  visibility: visible;
+  opacity: 1;
+}
+
+button:hover {
+  background-color: #ff3c1f; /* A slightly different shade for hover */
+}
+
+.button-disabled {
+  background-color: #aaa; /* Grayed out button when disabled */
+  cursor: not-allowed;
+}
+
+.message {
+  margin-top: 10px;
+  color: #ff652f; /* Neon text for messages */
+}
+
+.community-link-button,
+.twitter-link-button {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #1DA1F2; /* Twitter blue color */
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.community-link-button:hover,
+.twitter-link-button:hover {
+  background-color: #0d8cd5;
+}
+
+/* Add additional styles for inputs if needed */
+input[type='text'] {
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid #ff652f; /* Neon accent color */
+  background-color: #0a0a0a; /* Dark background */
+  color: #fff; /* White text */
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 200px; /* Adjust based on your layout */
+}
+
+input[type='number'] {
+  background-color: #1a1a1a;
+  color: #fff;
+  border: 1px solid #ff652f;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  font-size: 1rem;
+}
+
+/* Style links for learn more, etc. */
+a {
+  color: #ff652f; /* Same neon color for links */
+  text-decoration: none; /* No underline for a cleaner look */
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: #ff3c1f; /* Color change on hover */
+}
+
+.footer {
+  position: fixed; /* Keep footer fixed at the bottom */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2px;
+  background-color: rgba(10, 10, 10, 0.9);
+  text-align: center;
+  z-index: 2; /* Ensure the footer is above other content */
+}
+
+.footer-links {
+  margin-bottom: 20px; /* Adjust this value to reduce the space between header and footer */
+}
+
+/* Style links for learn more, etc. */
+.footer-links a {
+  color: #ff652f; /* Same neon color for links */
+  text-decoration: none; /* No underline for a cleaner look */
+  transition: color 0.3s ease-in-out;
+  margin-right: 20px; /* Adjust the spacing between links */
+}
+
+.footer-links a:hover {
+  color: #ff3c1f; /* Darker shade of red */
+}
+
+/* Style for link separators */
+.link-separator {
+  color: #ffffff; /* Adjust color as needed */
+}
+
+
+/* Style for NonWhitelistedInfo component */
+.non-whitelisted-info {
+  text-align: left;
+  color: #FFA07A; /* Light salmon for contrast and visibility */
+  max-width: 600px; /* or any other max-width or width */
+  margin: 0 auto;
+}
+
+.non-whitelisted-info h2 {
+  margin-bottom: 0.1em;
+}
+
+.non-whitelisted-info ol, 
+.non-whitelisted-info ul {
+  padding-left: 20px;
+  margin-bottom: 1em;
+}
+
+.non-whitelisted-info li {
+  margin-bottom: 0.5em;
+}
+
+.non-whitelisted-info a {
+  color: #61dafb; /* React blue as an example */
+  text-decoration: none; /* No underlines for cleaner look */
+}
+
+.non-whitelisted-info a:hover {
+  text-decoration: underline; /* Underline on hover for interactivity */
+}
+
+.feedback-message {
+  margin-top: 20px;
+}
+
+.ContributeFunds:hover + .contribution-info,
+.TipFaucet:hover + .tip-info {
+  display: block;
+}
+
+.info-container {
+  position: absolute;
+  top: calc(100% + 10px); /* Adjust the gap between button and info container */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 101, 47, 0.9);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  z-index: 1;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Add branding styles */
+.info-container::before {
+  content: '🌋'; /* Add volcano emoji for branding */
+  display: block;
+  font-size: 24px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.info-container p {
+  margin: 0;
+}
