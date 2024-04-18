@@ -119,6 +119,8 @@ const WithdrawFunds = ({ contract, account, isLoading, setShowMatrixRain }) => {
       <div className="captcha-container"> {/* Apply CSS styles to this container */}
         <HCaptcha
           sitekey="cb31ae15-8e58-4fe4-abe3-7ee60b98be11"
+          theme="dark" // Change theme from light to dark
+          size="compact" // Change size from normal to compact
           onVerify={handleCaptchaVerify}
           onExpire={() => setCaptchaToken('')}
         />
