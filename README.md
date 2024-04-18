@@ -1,6 +1,9 @@
 # LAVA FAUCET
 
-![Lava Faucet](https:lavafaucet.xyz)
+![Lava Faucet](https://www.lavafaucet.xyz)
+
+![Readme](website.png)
+
 
 ## Description
 LAVA FAUCET is a decentralized application (DApp) built on the Magma blockchain that allows users to claim LAVA tokens periodically. It serves as a faucet, distributing a predetermined amount of LAVA tokens to users who interact with it, thereby providing them with a small amount of cryptocurrency for testing or development purposes.
