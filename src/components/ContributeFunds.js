@@ -84,7 +84,7 @@ const ContributeFunds = ({ account, isLoading, setIsLoading, setShowMatrixRain, 
         type="text"
         value={amount}
         onChange={(e) => setAmount(e.target.value)}
-        placeholder="Amount in ETH"
+        placeholder="Amount in LAVA"
         className="contribute-input"
       />
       <button 
