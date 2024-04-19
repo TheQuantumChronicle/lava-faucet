@@ -77,6 +77,35 @@ body, html {
     font-size: 0.6rem; /* Further decrease font size */
     padding-left: 40px;
     padding-right: 40px;
+    padding-bottom: 40px;
+  }
+
+  .footer {
+    position: fixed; /* Keep footer fixed at the bottom */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2px;
+    margin-bottom: 40px;
+    background-color: rgba(10, 10, 10, 0.9);
+    text-align: center;
+    z-index: 2; /* Ensure the footer is above other content */
+  }
+  
+  .footer-links {
+    margin-top: 80px; /* Adjust this value to reduce the space between header and footer */
+  }
+  
+  /* Style links for learn more, etc. */
+  .footer-links a {
+    color: #ff652f; /* Same neon color for links */
+    text-decoration: none; /* No underline for a cleaner look */
+    transition: color 0.3s ease-in-out;
+    margin-right: 20px; /* Adjust the spacing between links */
+  }
+  
+  .footer-links a:hover {
+    color: #ff3c1f; /* Darker shade of red */
   }
 }
 
