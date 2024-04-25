@@ -101,6 +101,7 @@ body, html {
     color: #ff652f; /* Same neon color for links */
     text-decoration: none; /* No underline for a cleaner look */
     transition: color 0.3s ease-in-out;
+    font-size: 10px;
     margin-right: 20px; /* Adjust the spacing between links */
   }
   
