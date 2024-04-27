@@ -129,7 +129,7 @@ function App() {
               <p><strong>3.</strong> After initial contribution, users can contribute any amount of LAVA</p>
             </div>
             <div className="start-here-line">
-              <p><strong>4.</strong> 'Withdraw' gives you .5 LAVA every 24hrs</p>
+              <p><strong>4.</strong> 'Withdraw' gives you .1 LAVA every 24hrs</p>
             </div>
             <div className="start-here-line">
               <p>
