@@ -20,7 +20,8 @@ body, html {
   border-radius: 2px;
   padding: 5px;
   height: 100%;
-  z-index: 1; 
+  z-index: 1;
+  transition: padding-top 0.3s ease-in-out; /* Smooth transition */
 }
 
 .title {
@@ -28,8 +29,10 @@ body, html {
   color: #ff652f;
   font-size: 48px;
   text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.23);
-  border-bottom: 2px #ff0000;
+  border-bottom: 2px solid #ff0000;
   padding-bottom: 10px;
+  margin-top: 60px; /* Add margin from the top */
+  transition: margin-top 0.3s ease-in-out; /* Smooth transition */
 }
 
 .App-header {
@@ -49,6 +52,16 @@ body, html {
 
 /* Styles for smaller screens */
 @media (max-width: 768px) {
+
+  .banner {
+    top: 20%; /* Center banner vertically for smaller screens */
+    max-width: 90%;
+  }
+
+  .title {
+    margin-top: 40px; /* Adjust margin for smaller screens */
+  }
+
   .App-header {
     max-width: 70%;
     padding: 1rem; /* Decrease padding for smaller screens */
@@ -69,6 +82,7 @@ body, html {
 
 /* Styles for even smaller screens */
 @media (max-width: 480px) {
+
   .App-header {
     position: absolute;
     max-width: 70%;
@@ -78,6 +92,10 @@ body, html {
     padding-left: 40px;
     padding-right: 40px;
     padding-bottom: 40px;
+  }
+
+  .title {
+    margin-top: 20px; /* Further adjust margin for even smaller screens */
   }
 
   .footer {

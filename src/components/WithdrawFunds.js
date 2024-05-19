@@ -130,7 +130,7 @@ const WithdrawFunds = ({ contract, account, isLoading, setShowMatrixRain }) => {
         disabled={loading || !canWithdraw || !captchaToken || withdrawDisabled}
         className={loading || !canWithdraw || !captchaToken || withdrawDisabled ? 'button-disabled' : ''}
       >
-        {loading ? <LoadingSpinner /> : canWithdraw ? 'Claim .1 LAVA' : `Next withdraw in ${formatTimeLeft(timeLeft)}`}
+        {loading ? <LoadingSpinner /> : canWithdraw ? 'Claim .5 LAVA' : `Next withdraw in ${formatTimeLeft(timeLeft)}`}
       </button>
       {message && <p className="message">{message}</p>}
     </>

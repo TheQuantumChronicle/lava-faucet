@@ -123,13 +123,13 @@ function App() {
               <p><strong>1.</strong> Users must be whitelisted to use our faucet</p>
             </div>
             <div className="start-here-line">
-              <p><strong>2.</strong> Gain WL access by contributing .1 LAVA minimum</p>
+              <p><strong>2.</strong> Gain WL access by contributing .5 LAVA minimum</p>
             </div>
             <div className="start-here-line">
               <p><strong>3.</strong> After initial contribution, users can contribute any amount of LAVA</p>
             </div>
             <div className="start-here-line">
-              <p><strong>4.</strong> 'Withdraw' gives you .1 LAVA every 24hrs</p>
+              <p><strong>4.</strong> 'Withdraw' gives you .5 LAVA every 24hrs</p>
             </div>
             <div className="start-here-line">
               <p>
