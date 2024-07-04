@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Lava Faucet",
+  "name": "Collect Testnet LAVA to Build on Magma L2 Blockchain",
   "icons": [
     {
       "src": "favicon.ico",
